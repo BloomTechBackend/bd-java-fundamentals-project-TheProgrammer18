@@ -15,14 +15,20 @@ public class Player {
     private int power = 1;
     private int health = 10;
 
+
+    String name;
+
+
     /**
      * Sprint 2 Module 1
      * Saves the player's name. This file should store the name so it can be referenced later. After setting the name,
      * inform the user that the name has been changed by saying "Your name is now {name}".
      * @param newName - the player's name that will be saved
      */
-    public void setName(String newName) {
+    public String setName(String newName) {
+        name = newName;
 
+        return name;
     }
 
     /**
@@ -32,8 +38,12 @@ public class Player {
      * @return The name of the player
      */
     public String getName() {
+        
         return "";
     }
+
+
+
 
     /**
      * Sprint 2 Module 1
@@ -42,6 +52,11 @@ public class Player {
      * @return true if the player's level is enough to open the door.
      */
     public boolean canOpenDoor() {
+        float checkingLevel = (float)level/2;
+
+        if(checkingLevel > 2){
+            return true;
+        }
         return false;
     }
 
