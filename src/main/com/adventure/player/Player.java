@@ -16,7 +16,7 @@ public class Player {
     private int health = 10;
 
 
-    String name;
+    private String name;
 
 
     /**
@@ -25,10 +25,10 @@ public class Player {
      * inform the user that the name has been changed by saying "Your name is now {name}".
      * @param newName - the player's name that will be saved
      */
-    public String setName(String newName) {
+    public void setName(String newName) {
         name = newName;
+        System.out.println("Your name is now " + name);
 
-        return name;
     }
 
     /**
@@ -38,8 +38,8 @@ public class Player {
      * @return The name of the player
      */
     public String getName() {
-        
-        return "";
+
+        return name;
     }
 
 
@@ -54,10 +54,8 @@ public class Player {
     public boolean canOpenDoor() {
         float checkingLevel = (float)level/2;
 
-        if(checkingLevel > 2){
-            return true;
-        }
-        return false;
+            return checkingLevel > 2;
+
     }
 
 
