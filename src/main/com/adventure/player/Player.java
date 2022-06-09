@@ -1,10 +1,13 @@
 package main.com.adventure.player;
 
+import com.amazonaws.services.dynamodbv2.xspec.S;
 import main.com.adventure.settings.AppSettings;
 import main.com.adventure.world.objects.Shovel;
 import main.com.adventure.world.objects.Tangible;
 import main.com.adventure.world.objects.Weapon;
 import main.com.adventure.world.objects.keys.Key;
+import java.util.Scanner;
+
 
 public class Player {
 
@@ -17,6 +20,7 @@ public class Player {
 
 
     private String name;
+
 
 
     /**
@@ -81,7 +85,23 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
-        return true;
+        Scanner scanner = new Scanner(System.in);
+        direction = scanner.nextLine();
+        if (direction == "move west"){
+            currentLocationIndex--;
+            isValidDirection = true;
+            return isValidDirection;
+        }
+        if(direction == "move west"){
+            currentLocationIndex--;
+            isValidDirection = true;
+            return isValidDirection;
+
+        }
+        return false;
+
+
+
     }
 
     /**
