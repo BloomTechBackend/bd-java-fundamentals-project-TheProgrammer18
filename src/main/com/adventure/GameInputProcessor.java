@@ -8,7 +8,7 @@ import java.util.Locale;
 
 public class GameInputProcessor {
 
-    String verb1;
+    private String command;
     /**
      * Asks the user for their next command.
      * @return the response from the user.
@@ -18,8 +18,8 @@ public class GameInputProcessor {
 
 
         System.out.println("Enter your next command:");
-        verb1 = scanner.nextLine();
-        return verb1;
+        command = scanner.nextLine();
+        return command;
     }
 
     /**
@@ -35,8 +35,11 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and blank object
      */
     private Command buildSimpleCommand(String input) {
-        input = verb1;
-        return new Command(verb1);
+
+        String arr[] = input.split(" ", 2);
+        String verb1 = arr[0];
+        System.out.println(verb1);
+        return new Command(verb1, input);
     }
 
     /**
@@ -59,9 +62,9 @@ public class GameInputProcessor {
      * @return - the Command object with the proper verb and object
      */
     private Command buildCommandWithObject(String input) {
-        input = verb1;
 
-        return new Command(verb1, "");
+
+        return new Command("", "");
     }
 
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.MT3" tests="10" skipped="0" failures="8" errors="0" timestamp="2022-06-09T18:22:11" hostname="DESKTOP-AH4RJJG" time="0.614">
+<testsuite name="com.adventure.MT3" tests="10" skipped="0" failures="8" errors="0" timestamp="2022-06-10T15:38:14" hostname="DESKTOP-AH4RJJG" time="0.609">
   <properties/>
-  <testcase name="testPlayerMovementInvalid()" classname="com.adventure.MT3" time="0.023">
+  <testcase name="testPlayerMovementInvalid()" classname="com.adventure.MT3" time="0.025">
     <failure message="java.util.NoSuchElementException: No line found" type="java.util.NoSuchElementException">java.util.NoSuchElementException: No line found
 	at java.base/java.util.Scanner.nextLine(Scanner.java:1651)
 	at main.com.adventure.player.Player.move(Player.java:89)
@@ -292,8 +292,8 @@
 	at java.base/java.lang.Thread.run(Thread.java:829)
 </failure>
   </testcase>
-  <testcase name="testInvalidMoveInput()" classname="com.adventure.MT3" time="0.571">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;null&gt;
+  <testcase name="testInvalidMoveInput()" classname="com.adventure.MT3" time="0.564">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -393,8 +393,8 @@
 </failure>
   </testcase>
   <testcase name="testPrompt2()" classname="com.adventure.MT3" time="0.001"/>
-  <testcase name="checkMoveInputEast()" classname="com.adventure.MT3" time="0.002">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;null&gt;
+  <testcase name="checkMoveInputEast()" classname="com.adventure.MT3" time="0.001">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -494,7 +494,7 @@
 </failure>
   </testcase>
   <testcase name="checkMoveInputWest()" classname="com.adventure.MT3" time="0.001">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;null&gt;
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;move&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -593,8 +593,8 @@
 	at java.base/java.lang.Thread.run(Thread.java:829)
 </failure>
   </testcase>
-  <testcase name="testUseInput()" classname="com.adventure.MT3" time="0.008">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;use&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;use&gt; but was: &lt;null&gt;
+  <testcase name="testUseInput()" classname="com.adventure.MT3" time="0.009">
+    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;use&gt; but was: &lt;&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;use&gt; but was: &lt;&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
 	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
 	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
@@ -693,14 +693,12 @@
 	at java.base/java.lang.Thread.run(Thread.java:829)
 </failure>
   </testcase>
-  <testcase name="checkSimpleInput()" classname="com.adventure.MT3" time="0.002">
-    <failure message="org.opentest4j.AssertionFailedError: expected: &lt;look&gt; but was: &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: &lt;look&gt; but was: &lt;null&gt;
-	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:55)
-	at org.junit.jupiter.api.AssertionUtils.failNotEqual(AssertionUtils.java:62)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:182)
-	at org.junit.jupiter.api.AssertEquals.assertEquals(AssertEquals.java:177)
-	at org.junit.jupiter.api.Assertions.assertEquals(Assertions.java:1124)
-	at com.adventure.MT3.checkSimpleInput(MT3.java:131)
+  <testcase name="checkSimpleInput()" classname="com.adventure.MT3" time="0.003">
+    <failure message="java.lang.NullPointerException" type="java.lang.NullPointerException">java.lang.NullPointerException
+	at main.com.adventure.GameInputProcessor.buildSimpleCommand(GameInputProcessor.java:38)
+	at main.com.adventure.GameInputProcessor.processCommand(GameInputProcessor.java:89)
+	at main.com.adventure.GameInputProcessor.getNextCommand(GameInputProcessor.java:77)
+	at com.adventure.MT3.checkSimpleInput(MT3.java:129)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -6,6 +6,8 @@ import main.com.adventure.world.objects.Shovel;
 import main.com.adventure.world.objects.Tangible;
 import main.com.adventure.world.objects.Weapon;
 import main.com.adventure.world.objects.keys.Key;
+import org.apache.commons.io.filefilter.TrueFileFilter;
+
 import java.util.Scanner;
 
 
@@ -85,20 +87,16 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
-        Scanner scanner = new Scanner(System.in);
-        direction = scanner.nextLine();
-        if (direction == "move west"){
-            currentLocationIndex--;
-            isValidDirection = true;
+        if(direction == "MOVE WEST"){
             return isValidDirection;
         }
-        if(direction == "move west"){
-            currentLocationIndex--;
-            isValidDirection = true;
+        if(direction == "MOVE EAST"){
             return isValidDirection;
-
         }
-        return false;
+        else{
+            isValidDirection = false;
+            return isValidDirection;
+        }
 
 
 
