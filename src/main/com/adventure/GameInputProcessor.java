@@ -2,9 +2,10 @@ package main.com.adventure;
 
 import main.com.adventure.settings.Command;
 import main.com.adventure.settings.CommandConstants;
-import java.util.Scanner;
 
 import java.util.Locale;
+import java.util.Scanner;
+
 
 public class GameInputProcessor {
 
@@ -36,10 +37,10 @@ public class GameInputProcessor {
      */
     private Command buildSimpleCommand(String input) {
 
-        String arr[] = input.split(" ", 2);
+        String[] arr = input.split(" ", 2);
         String verb1 = arr[0];
-        System.out.println(verb1);
-        return new Command(verb1, input);
+        String object = "";
+        return new Command(verb1, object);
     }
 
     /**
@@ -64,7 +65,20 @@ public class GameInputProcessor {
     private Command buildCommandWithObject(String input) {
 
 
-        return new Command("", "");
+        String[] arr = input.split(" ", 2);
+
+        if (arr.length == 2) {
+            String verb1 = arr[0];
+            String object = arr[1];
+            return new Command(verb1, object);
+        } else {
+            String verb1 = arr[0];
+            String object = "";
+            return new Command(verb1, object);
+        }
+
+
+
     }
 
 

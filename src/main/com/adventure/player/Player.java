@@ -1,14 +1,13 @@
 package main.com.adventure.player;
 
-import com.amazonaws.services.dynamodbv2.xspec.S;
 import main.com.adventure.settings.AppSettings;
 import main.com.adventure.world.objects.Shovel;
 import main.com.adventure.world.objects.Tangible;
 import main.com.adventure.world.objects.Weapon;
 import main.com.adventure.world.objects.keys.Key;
-import org.apache.commons.io.filefilter.TrueFileFilter;
 
-import java.util.Scanner;
+
+
 
 
 public class Player {
@@ -58,10 +57,9 @@ public class Player {
      * @return true if the player's level is enough to open the door.
      */
     public boolean canOpenDoor() {
-        float checkingLevel = (float)level/2;
+        float checkingLevel = (float) level / 2;
 
-            return checkingLevel > 2;
-
+        return checkingLevel > 2;
     }
 
 
@@ -87,17 +85,17 @@ public class Player {
      * @return true if the move is executed. Otherwise, false.
      */
     public boolean move(String direction, boolean isValidDirection) {
-        if(direction == "MOVE WEST"){
-            return isValidDirection;
-        }
-        if(direction == "MOVE EAST"){
-            return isValidDirection;
-        }
-        else{
-            isValidDirection = false;
-            return isValidDirection;
-        }
 
+        if (direction.equalsIgnoreCase("WEST") && isValidDirection) {
+            currentLocationIndex--;
+            return true;
+        } else if (direction.equalsIgnoreCase("EAST") && isValidDirection) {
+            currentLocationIndex++;
+            return true;
+        } else {
+            System.out.println(direction + " is not a valid direction");
+            return false;
+        }
 
 
     }
