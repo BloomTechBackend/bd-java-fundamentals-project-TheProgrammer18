@@ -2,12 +2,15 @@ package main.com.adventure;
 
 import main.com.adventure.settings.Command;
 import main.com.adventure.settings.CommandConstants;
+import main.com.adventure.settings.CommandVerb;
 
 import java.util.Locale;
 import java.util.Scanner;
 
 
 public class GameInputProcessor {
+
+
 
     private String command;
     /**
@@ -40,7 +43,9 @@ public class GameInputProcessor {
         String[] arr = input.split(" ", 2);
         String verb1 = arr[0];
         String object = "";
-        return new Command(verb1, object);
+
+        CommandVerb commandVerb = CommandVerb.getVerb(verb1.toUpperCase());
+        return new Command(commandVerb, object);
     }
 
     /**
@@ -70,11 +75,13 @@ public class GameInputProcessor {
         if (arr.length == 2) {
             String verb1 = arr[0];
             String object = arr[1];
-            return new Command(verb1, object);
+            CommandVerb commandVerb = CommandVerb.getVerb(verb1.toUpperCase());
+            return new Command(commandVerb, object);
         } else {
             String verb1 = arr[0];
             String object = "";
-            return new Command(verb1, object);
+            CommandVerb commandVerb = CommandVerb.getVerb(verb1.toUpperCase());
+            return new Command(commandVerb, object);
         }
 
 

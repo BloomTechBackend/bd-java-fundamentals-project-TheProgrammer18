@@ -1,6 +1,7 @@
 package main.com.adventure;
 
 import main.com.adventure.player.Player;
+import main.com.adventure.settings.CommandVerb;
 import main.com.adventure.world.Monster;
 
 public class CombatController {
@@ -23,11 +24,20 @@ public class CombatController {
      * or the player's health is 0. The player always goes first.
      */
     public void autosimulateCombat() {
+        //while player.gethealth > 0 || monster.gethealth > 0
+        //??
+
 
     }
 
     public boolean isPlayerDefeated() {
-        return false;
+       //if (autosimulateCombat() ?? )
+        //if player.gethealth == 0
+        // return true;
+        //else return false
+                return true;
+
+
     }
 
     /**

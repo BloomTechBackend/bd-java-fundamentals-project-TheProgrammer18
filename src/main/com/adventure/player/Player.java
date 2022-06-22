@@ -108,6 +108,7 @@ public class Player {
      */
     public void setWeapon(Weapon item) {
         //TODO Complete this function in Sprint 3 Module 2
+        this.power += item.getPower();
     }
 
     /**

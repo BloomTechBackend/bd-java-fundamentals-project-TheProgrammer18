@@ -122,22 +122,33 @@ public class GameController {
     }
 
     private void applyCommand(Command command) {
-        if (command.getVerb().equalsIgnoreCase(CommandConstants.LOOK)) {
-            describeCurrentScene();
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.MOVE)) {
-            move(command.getObjectName());
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.HELP)) {
-            printHelp();
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.USE)) {
-            use(command.getObjectName());
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.DIG)) {
-            dig();
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.EXAMINE)) {
-            examine(command.getObjectName());
-        } else if (command.getVerb().equalsIgnoreCase(CommandConstants.TAKE)) {
-            take(command.getObjectName());
-        } else {
-            printInvalidCommand();
+
+        switch (command.getVerb()) {
+            case LOOK:
+                describeCurrentScene();
+                break;
+            case MOVE:
+                move(command.getObjectName());
+                break;
+            case HELP:
+                printHelp();
+                break;
+            case USE:
+                use(command.getObjectName());
+                break;
+            case DIG:
+                dig();
+                break;
+            case EXAMINE:
+                examine(command.getObjectName());
+                break;
+            case TAKE:
+                take(command.getObjectName());
+                break;
+            default:
+                printInvalidCommand();
+                break;
+
         }
     }
 
@@ -150,7 +161,7 @@ public class GameController {
         CombatController controller = new CombatController(player, monster);
         controller.autosimulateCombat();
         if (controller.isPlayerDefeated()) {
-            System.out.println("Ooof, you got beat. That's okay. Try again.");
+            System.out.println("you got beat. That's okay. Try again.");
             scene.lostFight();
         } else {
             System.out.println("You won!");

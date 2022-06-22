@@ -33,7 +33,7 @@ public class Hole {
      */
     private Key getKeyIfPossible() {
         //TODO Get the HoleContent's content only if the hole is uncovered.
-       if(!isCovered()){
+       if(!isCovered()) {
            return holeContent.getKey();
        }
         return null;
