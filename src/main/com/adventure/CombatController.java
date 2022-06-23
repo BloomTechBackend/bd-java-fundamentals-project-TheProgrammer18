@@ -24,18 +24,35 @@ public class CombatController {
      * or the player's health is 0. The player always goes first.
      */
     public void autosimulateCombat() {
-        //while player.gethealth > 0 || monster.gethealth > 0
-        //??
+        /*
+        while player.gethealth > 0 || monster.gethealth > 0
+        double monsterPower = Monster.getpower();
+        double playerPower = Player.getPower();
+        double monsterHealth = Monster.gethealth;
+        double playerHealth = player.gethealth;
+        playerHealth -= monsterPower;
+        monsterHealth -= playerPower;
+         */
+
 
 
     }
 
     public boolean isPlayerDefeated() {
-       //if (autosimulateCombat() ?? )
-        //if player.gethealth == 0
-        // return true;
-        //else return false
-                return true;
+       /*
+        if (autosimulateCombat() ?? )
+        if player.gethealth == 0
+         return true;
+        else return false
+        OR
+        if (player.gethealth == 0) {
+        return true;
+        } else {
+        return false;
+        }
+        */
+
+        return true;
 
 
     }
