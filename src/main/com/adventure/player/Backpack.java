@@ -17,8 +17,20 @@ public class Backpack {
      * @return - true if the item is added. Otherwise, false.
      */
     public boolean addItem(Tangible item) {
-        //TODO Complete the function
-        return false;
+
+        Tangible[] inventory = new Tangible[20];
+        int i = 0;
+        for ( ; i < inventory.length; i++) {
+            if(inventory[i] == null) {
+                inventory[i] = item;
+            }
+        }
+
+        if (inventory[i] != null && inventory[i] == item) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**

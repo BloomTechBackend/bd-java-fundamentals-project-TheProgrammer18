@@ -107,7 +107,6 @@ public class Player {
      * @param item - the weapon that will be used to adjust the player's power.
      */
     public void setWeapon(Weapon item) {
-        //TODO Complete this function in Sprint 3 Module 2
         this.power += item.getPower();
     }
 
