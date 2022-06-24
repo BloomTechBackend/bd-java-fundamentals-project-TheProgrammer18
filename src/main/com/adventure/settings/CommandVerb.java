@@ -53,6 +53,12 @@ public enum CommandVerb {
             case "HELP":
                 verb = HELP;
                 break;
+            case "FIGHT":
+                verb = FIGHT;
+                break;
+            case "INVENTORY":
+                verb = INVENTORY;
+                break;
             default:
                 verb = INVALID;
                 break;

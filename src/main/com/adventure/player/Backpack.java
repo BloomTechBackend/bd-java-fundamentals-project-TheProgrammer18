@@ -9,6 +9,7 @@ public class Backpack {
 
     private static final int MAX_CAPACITY = 5;
 
+
     private final Tangible[] items = new Tangible[MAX_CAPACITY];
 
     /**
@@ -18,19 +19,14 @@ public class Backpack {
      */
     public boolean addItem(Tangible item) {
 
-        Tangible[] inventory = new Tangible[20];
         int i = 0;
-        for ( ; i < inventory.length; i++) {
-            if(inventory[i] == null) {
-                inventory[i] = item;
+        for (; i < items.length; i++) {
+            if(items[i] == null) {
+                items[i] = item;
             }
         }
 
-        if (inventory[i] != null && inventory[i] == item) {
-            return true;
-        } else {
-            return false;
-        }
+        return items[i] != null && items[i] == item;
     }
 
     /**
@@ -39,7 +35,13 @@ public class Backpack {
      * @return - the item if it exists. Otherwise, null.
      */
     public Tangible getItem(String name) {
-        //TODO Complete the function
+        for (int i = 0; i < items.length; i++) {
+            if (items[i].equals(name)) {
+               return items[i];
+            } else {
+                return null;
+            }
+        }
         return null;
     }
 
@@ -49,7 +51,9 @@ public class Backpack {
      * @return - true if the item was removed. Otherwise, false.
      */
     public boolean removeItem(Tangible item) {
-        //TODO Complete the function
+        for (int i = 0; i < items.length; i++) {
+            return items[i].equals((item.getName()));
+        }
         return false;
     }
 
@@ -62,6 +66,9 @@ public class Backpack {
      * Then each item should be printed with " - " before it.
      */
     public void printItems() {
-        //TODO Complete the function
+        StringBuilder itemNames = new StringBuilder("Here are the items in your backpack:");
+        for (int i = 0; i < items.length; i++) {
+            System.out.println(itemNames.append(" - ").append(items));
+        }
     }
 }
