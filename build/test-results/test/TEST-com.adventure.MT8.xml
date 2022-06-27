@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.adventure.MT8" tests="5" skipped="0" failures="4" errors="0" timestamp="2022-06-23T22:30:00" hostname="DESKTOP-AH4RJJG" time="0.623">
+<testsuite name="com.adventure.MT8" tests="5" skipped="0" failures="4" errors="0" timestamp="2022-06-25T23:02:31" hostname="DESKTOP-AH4RJJG" time="0.695">
   <properties/>
-  <testcase name="testPrintItemsCommand()" classname="com.adventure.MT8" time="0.609"/>
-  <testcase name="testBackpackAddRemoveItem()" classname="com.adventure.MT8" time="0.004">
+  <testcase name="testPrintItemsCommand()" classname="com.adventure.MT8" time="0.681"/>
+  <testcase name="testBackpackAddRemoveItem()" classname="com.adventure.MT8" time="0.005">
     <failure message="java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5" type="java.lang.ArrayIndexOutOfBoundsException">java.lang.ArrayIndexOutOfBoundsException: Index 5 out of bounds for length 5
 	at main.com.adventure.player.Backpack.addItem(Backpack.java:29)
 	at com.adventure.MT8.testBackpackAddRemoveItem(MT8.java:34)
@@ -194,7 +194,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:829)
 </failure>
   </testcase>
-  <testcase name="testBackpackViaPlayer()" classname="com.adventure.MT8" time="0.006">
+  <testcase name="testBackpackViaPlayer()" classname="com.adventure.MT8" time="0.005">
     <failure message="org.opentest4j.AssertionFailedError: expected: not &lt;null&gt;" type="org.opentest4j.AssertionFailedError">org.opentest4j.AssertionFailedError: expected: not &lt;null&gt;
 	at org.junit.jupiter.api.AssertionUtils.fail(AssertionUtils.java:39)
 	at org.junit.jupiter.api.Assertions.fail(Assertions.java:117)

@@ -1,6 +1,7 @@
 package main.com.adventure.player;
 
 import main.com.adventure.settings.AppSettings;
+import main.com.adventure.settings.CommandVerb;
 import main.com.adventure.world.objects.Shovel;
 import main.com.adventure.world.objects.Tangible;
 import main.com.adventure.world.objects.Weapon;
@@ -118,7 +119,8 @@ public class Player {
      */
     public Tangible getItem(String itemName) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
+        Tangible itemName2 = getItem(itemName);
+        return itemName2;
     }
 
     /**
@@ -129,7 +131,7 @@ public class Player {
      */
     public Tangible removeItem(Tangible item) {
         //TODO Complete this function in Sprint 3 Module 3
-        return null;
+        return item;
     }
 
     /**
@@ -147,6 +149,7 @@ public class Player {
      */
     public void addItem(Tangible item) {
         //TODO Complete this function
+
     }
 
     public void setKey(Key item) {

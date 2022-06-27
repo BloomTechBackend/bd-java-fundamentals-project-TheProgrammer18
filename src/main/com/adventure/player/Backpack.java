@@ -71,4 +71,8 @@ public class Backpack {
             System.out.println(itemNames.append(" - ").append(items));
         }
     }
+
+    public Tangible[] getItems() {
+        return items;
+    }
 }
