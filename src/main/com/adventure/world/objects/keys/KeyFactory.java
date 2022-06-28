@@ -1,7 +1,5 @@
 package main.com.adventure.world.objects.keys;
 
-import java.util.logging.Level;
-
 public class KeyFactory {
 
     /**

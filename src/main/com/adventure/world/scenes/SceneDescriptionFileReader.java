@@ -40,7 +40,7 @@ public class SceneDescriptionFileReader {
     private String produceTextFromBufferedReader(BufferedReader br) throws IOException {
         String result = "";
         String currentLine = br.readLine();
-        while (currentLine !=null) {
+        while (currentLine != null) {
             result += currentLine + "\n";
             currentLine = br.readLine();
         }

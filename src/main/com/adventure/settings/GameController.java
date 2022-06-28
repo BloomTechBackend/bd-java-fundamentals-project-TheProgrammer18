@@ -22,7 +22,7 @@ public class GameController {
     private final Player player = new Player();
     private final World world = new World();
     private final GameInputProcessor inputProcessor = new GameInputProcessor();
-    private final Scanner scanner = new Scanner(System.in, StandardCharsets.UTF_8);
+    private final Scanner scanner = new Scanner(System.in , StandardCharsets.UTF_8);
 
     private boolean isInProgress = true;
 
@@ -53,7 +53,7 @@ public class GameController {
 
     private void move(String direction) {
         boolean isValid = getCurrentScene().getPossibleDirections().contains(direction.toUpperCase(Locale.ROOT));
-        if (player.move(direction, isValid)) {
+        if (player.move(direction , isValid)) {
             describeCurrentScene();
         }
         if (player.getCurrentLocation() == world.scenes.size()) {
@@ -161,7 +161,7 @@ public class GameController {
         }
         IMonsterScene scene = (IMonsterScene) getCurrentScene();
         Monster monster = scene.getMonster();
-        CombatController controller = new CombatController(player, monster);
+        CombatController controller = new CombatController(player , monster);
         controller.autosimulateCombat();
         if (controller.isPlayerDefeated()) {
             System.out.println("you got beat. That's okay. Try again.");

@@ -1,20 +1,20 @@
 package main.com.adventure;
 
 import main.com.adventure.player.Player;
-import main.com.adventure.settings.CommandVerb;
 import main.com.adventure.world.Monster;
 
 public class CombatController {
 
-    private Player player;
-    private Monster monster;
+    private final Player player;
+    private final Monster monster;
 
     /**
      * Processes a combat situation between the player and a monster.
-     * @param player - the game's player.
+     *
+     * @param player  - the game's player.
      * @param monster - the monster who the player is trying to defeat.
      */
-    public CombatController(Player player, Monster monster) {
+    public CombatController(Player player , Monster monster) {
         this.player = player;
         this.monster = monster;
     }
@@ -36,14 +36,6 @@ public class CombatController {
     }
 
     public boolean isPlayerDefeated() {
-       /*
-        if (player.gethealth <= 0) {
-        return true;
-        } else {
-        return false;
-        }
-        */
-
         return player.getHealth() <= 0;
 
 

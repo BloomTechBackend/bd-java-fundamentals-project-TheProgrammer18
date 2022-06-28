@@ -1,9 +1,5 @@
 package main.com.adventure.settings;
 
-import com.amazonaws.services.dynamodbv2.xspec.M;
-
-import java.util.Objects;
-
 /**
  * Sprint 3 Module 1
  * This CommandVerb will be used instead of strings once we've learned about Enums.

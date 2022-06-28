@@ -18,15 +18,13 @@ public class Backpack {
      * @return - true if the item is added. Otherwise, false.
      */
     public boolean addItem(Tangible item) {
-
-        int i = 0;
-        for (; i < items.length; i++) {
-            if(items[i] == null) {
+        for (int i = 0; i < items.length; i++) {
+            if (items[i] == null) {
                 items[i] = item;
+                return true;
             }
         }
-
-        return items[i] != null && items[i] == item;
+        return false;
     }
 
     /**
@@ -36,10 +34,8 @@ public class Backpack {
      */
     public Tangible getItem(String name) {
         for (int i = 0; i < items.length; i++) {
-            if (items[i].equals(name)) {
-               return items[i];
-            } else {
-                return null;
+            if (items[i] != null && items[i].getName().equals(name)) {
+                return items[i];
             }
         }
         return null;
@@ -52,7 +48,10 @@ public class Backpack {
      */
     public boolean removeItem(Tangible item) {
         for (int i = 0; i < items.length; i++) {
-            return items[i].equals((item.getName()));
+            if (items[i] != null && items[i].getName().equals(item.getName())) {
+                items[i] = null;
+                return true;
+            }
         }
         return false;
     }
@@ -66,10 +65,13 @@ public class Backpack {
      * Then each item should be printed with " - " before it.
      */
     public void printItems() {
-        StringBuilder itemNames = new StringBuilder("Here are the items in your backpack:");
+        StringBuilder itemNames = new StringBuilder("Here are the items in your backpack: \n");
         for (int i = 0; i < items.length; i++) {
-            System.out.println(itemNames.append(" - ").append(items));
+            if (items[i] != null) {
+                itemNames.append(" - ").append(items[i].getName() + "\n");
+            }
         }
+        System.out.println(itemNames);
     }
 
     public Tangible[] getItems() {

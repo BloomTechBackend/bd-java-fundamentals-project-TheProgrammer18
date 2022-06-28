@@ -11,10 +11,10 @@ import java.util.Random;
  * The OmniDoor is a door whose lock is a set of 5 pins. Each pin
  * is either up or down. The OmniDoor can only be opened by an
  * OmniKey who's pins are configured the same as the OmniDoor's pins.
-
+ * <p>
  * If a player tries to open an OmniDoor with an OmniKey and the key is
  * improperly configured, the OmniDoor will randomize its pins.
- *
+ * <p>
  * The OmniDoor does have one redeeming quality: you can ask the door
  * to give you a key's first incorrect pin without any consequence.
  */
@@ -41,42 +41,60 @@ public class OmniDoor implements Tangible {
      * Creates an OmniDoor with the default lock (all true).
      */
     public OmniDoor() {
-        Arrays.fill(pins, true);
+        Arrays.fill(pins , true);
     }
 
     /**
      * This method first checks if the key's pins are correct. If each of the key's
      * pins matches the door's pins at the same index, then the door will update
      * isOpen's state and the following message will be sent to the console:
-     *
-     *      "The door is unlocked!"
-     *
+     * <p>
+     * "The door is unlocked!"
+     * <p>
      * If a pin is not correct, then randomizePins is called and the
      * look is immediately stopped.
      *
      * @param key - the key that will be used to attempt to unlock the door
      */
     public void unlock(OmniKey key) {
-        //TODO Complete the function
+        for (int i = 0; i < pins.length; i++) {
+            if (key.pins[i] != pins[i]) {
+                randomizePins();
+                this.isOpen = false;
+                return;
+            }
+        }
+        this.isOpen = true;
     }
 
     /**
      * The method will check each pin from the key with the pin
      * in the lock. When the first incorrect pin is found, that
      * index is returned immediately.
-     *
+     * <p>
      * For example, if the pin at
      * index 1 is incorrect, then this method will return 1 and
      * NOT continue checking subsequent pins.
-     *
+     * <p>
      * If all pins are correct, then the method will return -1.
+     *
      * @param key the key to use to configure the door.
      * @return the index of the first incorrect pin, or -1 if
      * all are correct.
      */
     public int getFirstWrongPin(OmniKey key) {
-        //TODO Complete the function
-        return 0;
+        //first check if each key index is equal to each pin index
+        //create a for loop to go through the pins array
+        //create an if statement to check if each key is equal to each pin index
+        //if so continue checking each pin
+        //if not return the index that did not match and stop the for loop from continuing
+        //if all pins are correct return -1
+        for (int i = 0; i < pins.length; i++) {
+            if (key.pins[i] != pins[i]) {
+                return i;
+            }
+        }
+        return -1;
     }
 
     //Tangible implementation//
@@ -123,5 +141,9 @@ public class OmniDoor implements Tangible {
         for (int i = 0; i < pinCount; i++) {
             pins[i] = random.nextBoolean();
         }
+    }
+
+    public boolean[] getPins() {
+        return pins;
     }
 }

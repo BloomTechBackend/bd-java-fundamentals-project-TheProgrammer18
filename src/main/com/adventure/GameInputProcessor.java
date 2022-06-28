@@ -11,16 +11,15 @@ import java.util.Scanner;
 public class GameInputProcessor {
 
 
-
     private String command;
+
     /**
      * Asks the user for their next command.
+     *
      * @return the response from the user.
      */
     public String prompt() {
         Scanner scanner = new Scanner(System.in);
-
-
         System.out.println("Enter your next command:");
         command = scanner.nextLine();
         return command;
@@ -30,60 +29,54 @@ public class GameInputProcessor {
      * Inputs that come into this method represent single action with no object. When building the command, you'll want
      * to supply the first word as the verb and leave the objectName blank.
      * Example input:
-     *  "help"
-     *  "look"
-     *
-     *  Note: this command must stay private when running the tests
+     * "help"
+     * "look"
+     * <p>
+     * Note: this command must stay private when running the tests
      *
      * @param input - the input from the user
      * @return - the Command object with the proper verb and blank object
      */
     private Command buildSimpleCommand(String input) {
-
-        String[] arr = input.split(" ", 2);
+        String[] arr = input.split(" " , 2);
         String verb1 = arr[0];
         String object = "";
-
         CommandVerb commandVerb = CommandVerb.getVerb(verb1.toUpperCase());
-        return new Command(commandVerb, object);
+        return new Command(commandVerb , object);
     }
 
     /**
      * Inputs that come into this method will have an object or objects that the action is acting on. You'll need to
      * include the object parameter as part of the Command object.
      * Example input:
-     *  "use key"
-     *  "examine door"
-     *  "move west"
-     *
+     * "use key"
+     * "examine door"
+     * "move west"
+     * <p>
      * You should also account for incomplete actions (i.e. the object is missing). In that case, you should return an
      * empty string for the object parameter.
      * Example bad input:
-     *  "move"
-     *  " use "
-     *
-     *  Note: this command must stay private when running the tests
+     * "move"
+     * " use "
+     * <p>
+     * Note: this command must stay private when running the tests
      *
      * @param input - the input from the user
      * @return - the Command object with the proper verb and object
      */
     private Command buildCommandWithObject(String input) {
-
-
-        String[] arr = input.split(" ", 2);
-
+        String[] arr = input.split(" " , 2);
         if (arr.length == 2) {
             String verb1 = arr[0];
             String object = arr[1];
             CommandVerb commandVerb = CommandVerb.getVerb(verb1.toUpperCase());
-            return new Command(commandVerb, object);
+            return new Command(commandVerb , object);
         } else {
             String verb1 = arr[0];
             String object = "";
             CommandVerb commandVerb = CommandVerb.getVerb(verb1.toUpperCase());
-            return new Command(commandVerb, object);
+            return new Command(commandVerb , object);
         }
-
 
 
     }
@@ -93,6 +86,7 @@ public class GameInputProcessor {
 
     /**
      * Gets the next command from the user.
+     *
      * @return a command object
      */
     public Command getNextCommand() {

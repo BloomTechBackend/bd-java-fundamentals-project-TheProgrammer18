@@ -80,10 +80,7 @@ public class Door implements Tangible {
     @Override
     public Boolean canUse(Tangible item) {
         Key key = (Key) item;
-        if (isKeyValid(key)) {
-            return true;
-        }
-        return false;
+        return isKeyValid(key);
     }
 
     @Override
