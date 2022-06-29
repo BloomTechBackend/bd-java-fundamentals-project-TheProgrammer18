@@ -150,11 +150,8 @@ public class Player {
     }
 
     /**
-     * setKey method.
-     *
-     * Description: adds key to the backpack array.
-     *
-     * @param item
+     * Adds key to the backpack.
+     * @param item The name, description, and parameters of the item.
      */
     public void setKey(Key item) {
         backpack.addItem(item);
@@ -164,6 +161,10 @@ public class Player {
         return (Key) backpack.getItem("key");
     }
 
+    /**
+     * Takes in item shovel and adds it to the backpack.
+     * @param item The name, description, and parameters of the item.
+     */
     public void setShovel(Shovel item) {
         backpack.addItem(item);
     }

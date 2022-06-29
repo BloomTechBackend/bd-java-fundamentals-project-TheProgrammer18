@@ -13,17 +13,14 @@ public class Hole {
 
     /**
      * Takes the content from Key and creates holeContent with it.
-     * Key content is the input
-     * holeContent is the output
-     * @param content
-     * @ret holeContent
+     * @param content the actual stuff inside the hole.
      */
     public Hole(Key content) {
         holeContent = new HoleContent(content);
+
     }
 
     public boolean isCovered() {
-        //TODO This value should come from HoleContent
         return holeContent.isCovered();
     }
 
@@ -31,7 +28,6 @@ public class Hole {
      * Uncovers the hole. If applicable, the contents are now revealed.
      */
     public void dig() {
-        //TODO this function should update HoleContent's isCovered property.
         holeContent.setIsCovered(false);
     }
 

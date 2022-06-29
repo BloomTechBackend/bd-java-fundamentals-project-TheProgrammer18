@@ -21,20 +21,24 @@ public class Door implements Tangible {
 
     private int level;
 
-
+    /**
+     * sets the door to it's default value of 1.
+     */
     public Door() {
         this.level = 1;
     }
 
-
-
+    /**
+     * Takes in 2 parameters isOPen and level and sets them equal to the primitive values of isOpen and level.
+     * @param isOpen whether the door is open or not (true/false).
+     * @param level what level number the object should be.
+     */
     public Door(boolean isOpen , int level) {
         this.isOpen = isOpen;
         this.level = level;
     }
 
     private boolean isKeyValid(Key key) {
-        //TODO Update doorLevel so it references the level of this door
         int doorLevel = level;
 
         return key != null && key.getLevel() == doorLevel;

@@ -6,7 +6,10 @@ public class HoleContent {
     private final Key content;
     private boolean isCovered = true;
 
-
+    /**
+     * Takes in parameter key and sets content equal to key.
+     * @param key The name, description, and parameters of the item.
+     */
     public HoleContent(Key key) {
         this.content = key;
     }
